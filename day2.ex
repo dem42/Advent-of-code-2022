@@ -30,4 +30,5 @@ matchCode = fn
   "C " <> m -> strat.({:s, matchMyCode.({:s, m})})
 end
 
+lines = Aoc.getInputLines("d2a.txt")
 IO.puts(Enum.sum(Enum.map(lines,matchCode)))
