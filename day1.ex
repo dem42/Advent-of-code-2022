@@ -14,4 +14,4 @@ end
 
 lines = Aoc.getInputLines("d1a.txt")
 chunky = Enum.chunk_while(lines, 0, chunk_fun, after_fun)
-IO.puts(Enum.sum(Enum.take(Enum.sort(chunky, :desc), 3)))
+chunky |> Enum.sort(:desc) |> Enum.take(3) |> Enum.sum |> IO.puts
