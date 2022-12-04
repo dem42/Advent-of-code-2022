@@ -1,3 +1,5 @@
+require Aoc
+
 splitter = fn str ->
   nstr = String.split_at(str, div(String.length(str),2))
   Tuple.to_list(nstr) |> Enum.map(&String.to_charlist/1)
