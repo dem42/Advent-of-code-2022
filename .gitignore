@@ -1,0 +1,4 @@
+*.ex~
+inputs/
+*.ex#
+test_stuff.ex
