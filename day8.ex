@@ -23,8 +23,7 @@ lines = Aoc.getInputLines("d8a.txt") |> Enum.map(to_cell)
 all_maps = 0..3
 |> Enum.map(&(Aoc.rotate(build_vismap.(Aoc.rotate(lines, &1)), 4 - &1)))
 |> Aoc.transpose
-|> Enum.map(fn map -> Aoc.transpose(map) |> Enum.map(&Enum.any?/1) end)
-|> Enum.flat_map(&Function.identity/1)
+|> Enum.flat_map(fn map -> Aoc.transpose(map) |> Enum.map(&Enum.any?/1) end)
 |> Enum.frequencies
 |> IO.inspect
 
@@ -46,7 +45,6 @@ end
 all_maps = 0..3
 |> Enum.map(&(Aoc.rotate(build_seecnt.(Aoc.rotate(lines, &1)), 4 - &1)))
 |> Aoc.transpose
-|> Enum.map(fn map -> Aoc.transpose(map) |> Enum.map(&Enum.product/1) end)
-|> Enum.flat_map(&Function.identity/1)
+|> Enum.flat_map(fn map -> Aoc.transpose(map) |> Enum.map(&Enum.product/1) end)
 |> Enum.max
 |> IO.inspect
