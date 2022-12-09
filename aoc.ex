@@ -41,4 +41,8 @@ defmodule Aoc do
       lists
     end
   end
+
+  def deep_put_in(data, path, value) do
+    put_in(data, Enum.map(path, &Access.key(&1, %{})), value)
+  end
 end
