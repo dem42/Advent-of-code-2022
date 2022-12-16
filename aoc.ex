@@ -49,4 +49,12 @@ defmodule Aoc do
   def into_map(list) do
     Enum.with_index(list, &Aoc.index_first/2) |> Enum.into(%{})
   end
+
+  def to_int(char) do
+    if char >= ?a do
+      char - ?a + 1
+    else
+      char - ?A + 27
+    end
+  end
 end
